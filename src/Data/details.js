@@ -1,0 +1,40 @@
+const details=[
+    {
+        name:"Billu",
+        gender:"male",
+        batch:"B45WD",
+        qualification:"BSC"
+    },
+    {
+        name:"Dina",
+        gender:"male",
+        batch:"B45WD",
+        qualification:"BE.Auto"
+    },
+    {
+        name:"Tony",
+        gender:"male",
+        batch:"B45WD",
+        qualification:"BE.cse"
+    },
+    {
+        name:"Gowtham",
+        gender:"male",
+        batch:"B45WD",
+        qualification:"BA"
+    },
+    {
+        name:"Christopher",
+        gender:"male",
+        batch:"B45WD",
+        qualification:"BE.cse"
+    },
+    {
+        name:"Justina",
+        gender:"Female",
+        batch:"B45WD",
+        qualification:"BSC"
+    }
+]
+
+export default details
