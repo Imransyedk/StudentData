@@ -11,10 +11,17 @@ import { useHistory } from 'react-router-dom';
 function Students({ students , setStudents}){
 const history = useHistory();
 
-const deleteStudent =(studId)=>{
-    
-    const remainingStudents=students.filter((stud,idx)=> idx !== studId)
+const deleteStudent = async(studId)=>{
+
+    const response = await fetch(`https://645740fc0c15cb148204ab02.mockapi.io/Users/${studId}`,{
+        method:"DELETE",
+    });
+
+    const data = await response.json()
+if(data){
+    const remainingStudents=students.filter((stud,idx)=> stud.id !== studId)
  setStudents(remainingStudents)
+}
 }
     return(
 <Base
@@ -33,8 +40,8 @@ description={"the pages contains all students data"}
     <p>{stud.qualification}</p>
     </div>
     <div className='control'>
-    <button onClick={()=>history.push(`/edit/${idx}`)}>edit</button>{" "}
-    <button onClick={()=>deleteStudent(idx)}>delete</button>
+    <button onClick={()=>history.push(`/edit/${stud.id}`)}>edit</button>{" "}
+    <button onClick={()=>deleteStudent(stud.id)}>delete</button>
 </div>
 </div>
    ))}

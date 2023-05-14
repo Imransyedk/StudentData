@@ -7,14 +7,26 @@ import { Route } from 'react-router-dom';
 import AddStudents from './Components/AddStudents';
 import UpdateStudents from './Components/UpdateStudents';
 import details from './Data/details';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Nopage from './Components/Nopage';
 import DashBoard from './Components/DashBoard';
 
 
 function App() {
- 
-const [students, setStudents]=useState(details);
+  const [students, setStudents]=useState([]);
+ useEffect(()=>{
+  const getStudents= async() =>{
+   const response =await fetch("https://645740fc0c15cb148204ab02.mockapi.io/Users",{
+    method:"GET",
+   });
+   const data= await response.json();
+   if(data){
+    setStudents(data)
+   }
+  }
+  getStudents();
+ },[])
+
   return (
     <div className='App'>
     <Switch>

@@ -20,7 +20,7 @@ function UpdateStudents({students,setStudents,editIdx}){
 
  },[editStudent])
 
-   function UpdateStudent (){
+   async function UpdateStudent (){
     
     const updatedObject ={
         name : name,
@@ -28,11 +28,23 @@ function UpdateStudents({students,setStudents,editIdx}){
         gender : gender,
         qualification : qualification
     }
+
+    const response = await fetch(`https://645740fc0c15cb148204ab02.mockapi.io/Users/${editStudent.id}`,{
+        method:"PUT",
+        body:JSON.stringify(updatedObject),
+        headers:{
+            "Content-Type":"application/json"
+        }
+    })
+
+    const data = await response.json()
+    if(data){
     console.log(updatedObject)
     students[id]=updatedObject
     setStudents ([...students])
     history.push("/students")
 
+    }
    }
   
    
