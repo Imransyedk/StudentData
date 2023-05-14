@@ -3,37 +3,43 @@ const details=[
         name:"Billu",
         gender:"male",
         batch:"B45WD",
-        qualification:"BSC"
+        qualification:"BSC",
+        id:"0"
     },
     {
         name:"Dina",
         gender:"male",
         batch:"B45WD",
-        qualification:"BE.Auto"
+        qualification:"BE.Auto",
+        id:"1"
     },
     {
         name:"Tony",
         gender:"male",
         batch:"B45WD",
-        qualification:"BE.cse"
+        qualification:"BE.cse",
+        id:"2"
     },
     {
         name:"Gowtham",
         gender:"male",
         batch:"B45WD",
-        qualification:"BA"
+        qualification:"BA",
+        id:"3"
     },
     {
         name:"Christopher",
         gender:"male",
         batch:"B45WD",
-        qualification:"BE.cse"
+        qualification:"BE.cse",
+        id:"4"
     },
     {
         name:"Justina",
         gender:"Female",
         batch:"B45WD",
-        qualification:"BSC"
+        qualification:"BSC",
+        id:"5"
     }
 ]
 
