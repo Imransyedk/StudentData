@@ -9,16 +9,25 @@ function AddStudents({students, setStudents}){
    const [gender, setGender]=useState("")
    const [qualification, setQualification]=useState("")
 
-const createStudent =()=>{
-
+const createStudent = async()=>{
     const newStudents={
         name:name,
         batch:batch,
         qualification:qualification,
         gender:gender,
     }
+
+    const response =await fetch("https://645740fc0c15cb148204ab02.mockapi.io/Users",{
+        method:"POST",
+        body:JSON.stringify(newStudents),
+        headers :{
+            "Content-Type":"application/json"
+        },
+    })
+   
+    const data = await response.json
  
-setStudents([...students,newStudents])
+setStudents([...students,data])
  history.push("/students")
 }
 
