@@ -52,7 +52,7 @@ function UpdateStudents({students,setStudents,editIdx}){
 
         <Base 
         title={"Edit a Students"}
-        description={"Edit Students data here"}
+        description={"Edit Students Data Here"}
         
         >
         <div>

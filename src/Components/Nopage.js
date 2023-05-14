@@ -8,7 +8,7 @@ function Nopage(){
     return(
         <Base
         title={"404 No Page Found"}
-        description={"Wrong url please click below button"}
+        description={"Wrong url Please click below button"}
         
         >
         <button

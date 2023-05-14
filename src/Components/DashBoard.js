@@ -8,7 +8,7 @@ function DashBoard(){
     return(
         <Base
         title={"Welcome to B45WD"}
-        description={"This student list website"}
+        description={"This student List Website"}
         
         >
       

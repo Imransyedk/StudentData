@@ -26,7 +26,7 @@ if(data){
     return(
 <Base
 title={"Students Dashboard"}
-description={"the pages contains all students data"}
+description={"the pages contains all Students Data"}
 >
 
 

@@ -35,7 +35,7 @@ setStudents([...students,data])
       
         <Base
         title={"Add New Student"}
-        description={"We can able to add new students data here"}
+        description={"We can able to add New Students data here"}
         
         >
         <div>
