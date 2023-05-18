@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import Base from '../Base/Base';
+import { Button, TextField } from '@mui/material';
 
 function UpdateStudents({students,setStudents,editIdx}){
   const history=useHistory()
@@ -55,37 +56,55 @@ function UpdateStudents({students,setStudents,editIdx}){
         description={"Edit Students Data Here"}
         
         >
-        <div>
-        <input
-        placeholder='Enter Name'
+            <div className="text-area-col">
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Name" 
+        variant="filled" 
         type="text"
         value={name}
         onChange={(e)=>setName(e.target.value)}
-        
         />
-        <input
-        placeholder='Enter Batch'
+
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Batch" 
+        variant="filled"
         type="text"
         value={batch}
         onChange={(e)=>setBatch(e.target.value)}
         />
-        <input
-         placeholder='Enter Gender'
+
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Gender"
+         variant="filled" 
          type="text"
          value={gender}
          onChange={(e)=>setGender(e.target.value)}
-        />
-        <input
-         placeholder='Enter Qualification'
-         type="text"
-         value={qualification}
-         onChange={(e)=>setQualification(e.target.value)}
-        />
-        <button
-        onClick={UpdateStudent}
-        >Update Students</button>
-    </div>
+         />
 
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Qualification" 
+        variant="filled" 
+        type="text"
+        value={qualification}
+        onChange={(e)=>setQualification(e.target.value)}
+        
+        />
+
+<Button 
+variant="contained"
+onClick={UpdateStudent}
+>Update Student</Button>
+
+           
+        </div>
 </Base>
     )
 }

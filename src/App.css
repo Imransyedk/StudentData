@@ -23,6 +23,9 @@
     text-align: center;
     height: 75%;
 }
+.child-component{
+    margin: 24px;
+}
 
 .card{
     display: flex;
@@ -39,4 +42,17 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+}
+
+.text-area-col{
+    width: 90%;
+   margin: 0 auto;
+}
+.nav-bar{
+    width: 100%;
+    padding: 17px;
+    margin-left: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }

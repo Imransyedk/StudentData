@@ -1,3 +1,4 @@
+import { Button, Typography } from '@mui/material';
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 
@@ -6,26 +7,37 @@ const history= useHistory();
 
     return(
         <div className='main-component base-component'> 
-   <button 
+   
+   
+   <div className='nav-bar'>
+   <Button 
+   variant="contained"
    onClick={()=>history.push("/")}
-    >Dashboard</button>
+    >Dashboard</Button>
    
-    <button
+    <Button
+    variant="contained"
    onClick={()=>history.push("/students")}
-    >Students-List</button>
-    <button
+    >Students-List</Button>
+    <Button
+    variant="contained"
     onClick={()=>history.push("/add")}
-    >Add-students</button>
+    >Add-students</Button>
      
-   
+     </div>
     
      <header>
+     <Typography variant="h3" className='heading'>
+     {title}
+      </Typography>
       
-        <h1 className='heading'>{title}</h1>
      </header>
      <main className='main-segment'>
-        <h2>{description}</h2>
-        <div>
+     <Typography variant="h4" className='heading'>
+     {description}
+      </Typography>
+       
+        <div className='child-component'>
            {children}
         </div>
      </main>

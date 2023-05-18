@@ -4,7 +4,9 @@ import details from '../Data/details';
 import AddStudents from './AddStudents';
 import UpdateStudents from './UpdateStudents';
 import { useHistory } from 'react-router-dom';
-
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
@@ -30,20 +32,38 @@ description={"the pages contains all Students Data"}
 >
 
 
+
     <div className='card-container'>
    {students.map((stud,idx)=>(
-    <div className='card' key={idx}>
-        <div className='content'>
-    <h3>{stud.name}</h3>
-    <p>{stud.batch}</p>
-    <p>{stud.gender}</p>
-    <p>{stud.qualification}</p>
-    </div>
-    <div className='control'>
-    <button onClick={()=>history.push(`/edit/${stud.id}`)}>edit</button>{" "}
-    <button onClick={()=>deleteStudent(stud.id)}>delete</button>
-</div>
-</div>
+
+<Card sx={{ maxWidth: 200 , height:220 }} key={idx}>
+     
+     <CardContent>
+       <Typography gutterBottom variant="h5" component="div">
+       {stud.name}
+       </Typography>
+       <Typography variant="body2" color="text.secondary">
+       {stud.batch}
+       </Typography>
+       <Typography variant="body2" color="text.secondary">
+       {stud.gender}
+       </Typography>
+       <Typography variant="body2" color="text.secondary">
+       {stud.qualification}
+       </Typography>
+     </CardContent>
+     <CardActions>
+       <Button size="small" onClick={()=>history.push(`/edit/${stud.id}`)}><ModeEditOutlineIcon/>
+       </Button>
+       <Button size="small" onClick={()=>deleteStudent(stud.id)}><DeleteIcon/>
+       </Button>
+     </CardActions>
+   </Card>
+
+
+
+
+
    ))}
    
 

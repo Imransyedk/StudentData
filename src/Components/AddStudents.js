@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Base from "../Base/Base";
 import { useHistory } from "react-router-dom";
+import { Button, TextField } from "@mui/material";
 
 function AddStudents({students, setStudents}){
     const history= useHistory()
@@ -38,35 +39,54 @@ setStudents([...students,data])
         description={"We can able to add New Students data here"}
         
         >
-        <div>
-            <input
-            placeholder='Enter Name'
-            type="text"
-            value={name}
-            onChange={(e)=>setName(e.target.value)}
-            
-            />
-            <input
-            placeholder='Enter Batch'
-            type="text"
-            value={batch}
-            onChange={(e)=>setBatch(e.target.value)}
-            />
-            <input
-             placeholder='Enter Gender'
-             type="text"
-             value={gender}
-             onChange={(e)=>setGender(e.target.value)}
-            />
-            <input
-             placeholder='Enter Qualification'
-             type="text"
-             value={qualification}
-             onChange={(e)=>setQualification(e.target.value)}
-            />
-            <button
-            onClick={createStudent}
-            >Add Students</button>
+        <div className="text-area-col">
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Name" 
+        variant="filled" 
+        type="text"
+        value={name}
+        onChange={(e)=>setName(e.target.value)}
+        />
+
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Batch" 
+        variant="filled"
+        type="text"
+        value={batch}
+        onChange={(e)=>setBatch(e.target.value)}
+        />
+
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Gender"
+         variant="filled" 
+         type="text"
+         value={gender}
+         onChange={(e)=>setGender(e.target.value)}
+         />
+
+        <TextField 
+        id="filled-basic" 
+        fullWidth sx={{ m: 1 }}
+        label="Qualification" 
+        variant="filled" 
+        type="text"
+        value={qualification}
+        onChange={(e)=>setQualification(e.target.value)}
+        
+        />
+
+<Button 
+variant="contained"
+onClick={createStudent}
+>Add Students</Button>
+
+           
         </div>
         </Base>
     )
